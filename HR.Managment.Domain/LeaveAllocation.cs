@@ -1,6 +1,8 @@
-﻿namespace HR.Managment.Domain
+﻿using HR.Managment.Domain.Common;
+
+namespace HR.Managment.Domain
 {
-    public class LeaveAllocation
+    public class LeaveAllocation : BaseEntity
     {
         public int LeaveAllocationID { get; set; }
         public int LeaveAllocationnumberOfDay { get; set; }

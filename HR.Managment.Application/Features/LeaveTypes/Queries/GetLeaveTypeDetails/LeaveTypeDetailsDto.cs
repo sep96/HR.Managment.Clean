@@ -1,17 +1,17 @@
-﻿using HR.Managment.Domain.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Managment.Domain
+namespace HR.Managment.Application.Features.LeaveTypes.Queries.GetLeaveTypeDetails
 {
-    public class LeaveTypes : BaseEntity
+    public class LeaveTypeDetailsDto
     {
         public int LeaveTypesID { get; set; }
         public string LeaveTypesName { get; set; } = string.Empty;
         public int LeaveTypesDefaultDays { get; set; }
+        public string CreateionUserID { get; set; } = string.Empty;
+        public DateTime CreationDateTime { get; set; }
     }
 }
