@@ -16,9 +16,4 @@
     <ProjectReference Include="..\HR.Managment.Domain\HR.Managment.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\LeaveTypes\Commands\" />
-    <Folder Include="Features\LeaveTypes\Queries\NewFolder\" />
-  </ItemGroup>
-
 </Project>
