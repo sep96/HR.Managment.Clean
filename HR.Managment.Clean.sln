@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{9F27536B-980B-410D-932B-3B10878E46C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.Managment.Domain", "HR.Managment.Domain\HR.Managment.Domain.csproj", "{92937F27-E07E-4BE2-B257-DE8F021A6088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR.Managment.Domain", "HR.Managment.Domain\HR.Managment.Domain.csproj", "{92937F27-E07E-4BE2-B257-DE8F021A6088}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.Managment.Application", "HR.Managment.Application\HR.Managment.Application.csproj", "{3B716DE4-2250-401B-9727-55BE0963B508}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR.Managment.Application", "HR.Managment.Application\HR.Managment.Application.csproj", "{3B716DE4-2250-401B-9727-55BE0963B508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.Managment.Persistence", "HR.Managment.Persistence\HR.Managment.Persistence.csproj", "{8EF75ABC-2722-4E78-95A1-C3ADAC809264}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3B716DE4-2250-401B-9727-55BE0963B508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B716DE4-2250-401B-9727-55BE0963B508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B716DE4-2250-401B-9727-55BE0963B508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF75ABC-2722-4E78-95A1-C3ADAC809264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF75ABC-2722-4E78-95A1-C3ADAC809264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF75ABC-2722-4E78-95A1-C3ADAC809264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF75ABC-2722-4E78-95A1-C3ADAC809264}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{9F27536B-980B-410D-932B-3B10878E46C4} = {E3A8BB23-318F-47BB-9C1F-41EA2C0589B5}
 		{92937F27-E07E-4BE2-B257-DE8F021A6088} = {4D5B37B7-938F-4278-801A-15A9A360C788}
 		{3B716DE4-2250-401B-9727-55BE0963B508} = {4D5B37B7-938F-4278-801A-15A9A360C788}
+		{8EF75ABC-2722-4E78-95A1-C3ADAC809264} = {202FACA4-4BC2-48B7-9A08-001A78FCADA8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B47E4A2C-526F-49FF-A590-05C3816D67E7}
