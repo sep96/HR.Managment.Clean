@@ -1,6 +1,7 @@
 ﻿using HR.Managment.Application.Contracts.Persistence;
 using HR.Managment.Persistence.DatabaseContext;
 using HR.Managment.Persistence.Repositories;
+using HR.Managment.Persistence.Repositories.LeaveType;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,9 @@ namespace HR.Managment.Persistence
                 options.UseSqlServer(configuration.GetConnectionString("Connectionstring"));
                 });
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
+            services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
+            services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
             return services;
         }
     }
