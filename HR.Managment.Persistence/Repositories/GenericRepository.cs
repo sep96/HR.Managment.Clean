@@ -32,7 +32,7 @@ namespace HR.Managment.Persistence.Repositories
 
         public async Task<IReadOnlyList<T>> GetAllAsync()
         {
-            return await _dBContext.Set<T>().ToListAsync();
+            return await _dBContext.Set<T>().AsNoTracking().ToListAsync();
         }
 
         public async Task<T> GetByIDAsync(int id)
