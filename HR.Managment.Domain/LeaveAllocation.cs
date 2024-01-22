@@ -9,5 +9,6 @@ namespace HR.Managment.Domain
         public LeaveTypes? LeaveTypes { get; set; }
         public int LeaveTypesID { get; set; }
         public int LeaveAllocationPeriod { get; set; }
+        public string EmployeeId { get; set; } = string.Empty;
     }
 }
