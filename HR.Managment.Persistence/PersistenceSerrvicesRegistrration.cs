@@ -18,7 +18,7 @@ namespace HR.Managment.Persistence
         public static IServiceCollection AddPersistanceServices(this IServiceCollection services , IConfiguration configuration)
         {
             services.AddDbContext<HrDatabaseContext>(options => {
-                options.UseSqlServer(configuration.GetConnectionString("Connectionstring"));
+                options.UseSqlServer(configuration.GetConnectionString("HrDatabaseConnectionString"));
                 });
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
