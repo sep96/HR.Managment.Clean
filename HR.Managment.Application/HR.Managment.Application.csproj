@@ -19,4 +19,9 @@
     <ProjectReference Include="..\HR.Managment.Domain\HR.Managment.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\LeaveAllocation\" />
+    <Folder Include="Features\LeaveRequest\Queries\" />
+  </ItemGroup>
+
 </Project>
