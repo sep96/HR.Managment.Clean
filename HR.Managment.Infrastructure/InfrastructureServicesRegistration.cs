@@ -15,7 +15,7 @@ namespace HR.Managment.Infrastructure
 {
     public static class InfrastructureServicesRegistration
     {
-        public static IServiceCollection AddPersistanceServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<EmailSetting>(configuration.GetSection("EmailSetting"));
             services.AddTransient<IEmailSender, EmailSender>();
