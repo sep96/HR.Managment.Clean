@@ -14,15 +14,15 @@ namespace HR.Managment.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<LeaveTypes> builder)
         {
-            builder.HasData(
-                new LeaveTypes
-                {
-                    LeaveTypesID = 1,
-                    LeaveTypesName = "Vacation",
-                    LeaveTypesDefaultDays = 1,
-                    CreationDateTime = DateTime.Now,
-                    ModifiedDateTime = DateTime.Now
-                });
+            //builder.HasData(
+            //    new LeaveTypes
+            //    {
+            //        LeaveTypesID = 2,
+            //        LeaveTypesName = "Vacation",
+            //        LeaveTypesDefaultDays = 1,
+            //        CreationDateTime = DateTime.Now,
+            //        ModifiedDateTime = DateTime.Now
+            //    });
         }
 
     }

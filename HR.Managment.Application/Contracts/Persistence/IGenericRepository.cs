@@ -12,6 +12,6 @@ namespace HR.Managment.Application.Contracts.Persistence
         Task<T> GetByIDAsync(int id);
         Task<T> AddAsync(T entity); 
         Task<T> UpdateAsync(T entity);
-        Task<T> DeleteAsync(T entity);    
+        Task<T> DeleteAsync(int id);    
     }
 }

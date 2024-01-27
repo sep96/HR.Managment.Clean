@@ -8,7 +8,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HR.Managment.Application\HR.Managment.Application.csproj" />
+    <ProjectReference Include="..\HR.Managment.Infrastructure\HR.Managment.Infrastructure.csproj" />
+    <ProjectReference Include="..\HR.Managment.Persistence\HR.Managment.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

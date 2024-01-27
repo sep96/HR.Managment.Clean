@@ -23,8 +23,9 @@ namespace HR.Managment.Persistence.Repositories
             return entity;
         }
 
-        public async Task<T> DeleteAsync(T entity)
+        public async Task<T> DeleteAsync(int id)
         {
+            var entity = await GetByIDAsync(id);
              _dBContext.Remove(entity);
             await _dBContext.SaveChangesAsync();
             return entity;
