@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HR.Managment.Application.Features.LeaveRequest.Commands
 {
-    public class DeleteLeaveRequestCommandHandler : IRequestHandler<DeleteLeaveRequestCommand>
+    public class DeleteLeaveRequestCommandHandler : IRequestHandler<DeleteLeaveRequestCommand, Unit>
     {
         private readonly ILeaveRequestRepository _leaveRequestRepository;
 
@@ -18,7 +18,6 @@ namespace HR.Managment.Application.Features.LeaveRequest.Commands
         {
             _leaveRequestRepository = leaveRequestRepository;
         }
-
         public async Task<Unit> Handle(DeleteLeaveRequestCommand request, CancellationToken cancellationToken)
         {
             var leaveRequest = await _leaveRequestRepository.GetByIDAsync(request.Id);
@@ -29,6 +28,5 @@ namespace HR.Managment.Application.Features.LeaveRequest.Commands
             await _leaveRequestRepository.DeleteAsync(request.Id);
             return Unit.Value;
         }
-
     }
 }

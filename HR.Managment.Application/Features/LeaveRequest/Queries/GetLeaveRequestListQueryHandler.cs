@@ -20,7 +20,7 @@ namespace HR.Managment.Application.Features.LeaveRequest.Queries
         {
             _leaveRequestRepository = leaveRequestRepository;
             _mapper = mapper;
-            this._userService = userService;
+          //  this._userService = userService;
         }
 
         public async Task<List<LeaveRequestListDto>> Handle(GetLeaveRequestListQuery request, CancellationToken cancellationToken)
@@ -32,23 +32,23 @@ namespace HR.Managment.Application.Features.LeaveRequest.Queries
             // Check if it is logged in employee
             if (request.IsLoggedInUser)
             {
-                var userId = _userService.UserId;
-                leaveRequests = await _leaveRequestRepository.GetLeaveRequestsWithDetails(userId);
+              //  var userId = _userService.UserId;
+               // leaveRequests = await _leaveRequestRepository.GetLeaveRequestsWithDetails(userId);
 
-                var employee = await _userService.GetEmployee(userId);
+               // var employee = await _userService.GetEmployee(userId);
                 requests = _mapper.Map<List<LeaveRequestListDto>>(leaveRequests);
                 foreach (var req in requests)
                 {
-                    req.Employee = employee;
+                 //   req.Employee = employee;
                 }
             }
             else
             {
-                leaveRequests = await _leaveRequestRepository.GetLeaveRequestsWithDetails();
+               // leaveRequests = await _leaveRequestRepository.GetLeaveRequestsWithDetails();
                 requests = _mapper.Map<List<LeaveRequestListDto>>(leaveRequests);
                 foreach (var req in requests)
                 {
-                    req.Employee = await _userService.GetEmployee(req.RequestingEmployeeId);
+                    //req.Employee = await _userService.GetEmployee(req.RequestingEmployeeId);
                 }
             }
 

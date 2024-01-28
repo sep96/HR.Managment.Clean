@@ -14,24 +14,24 @@ namespace HR.Managment.Application.Features.LeaveRequest.Queries
     {
         private readonly ILeaveRequestRepository _leaveRequestRepository;
         private readonly IMapper _mapper;
-        private readonly IUserService _userService;
+       // private readonly IUserService _userService;
 
         public GetLeaveRequestDetailQueryHandler(ILeaveRequestRepository leaveRequestRepository,
-            IMapper mapper, IUserService userService)
+            IMapper mapper)//, IUserService userService)
         {
             _leaveRequestRepository = leaveRequestRepository;
             _mapper = mapper;
-            this._userService = userService;
+           // this._userService = userService;
         }
         public async Task<LeaveRequestDetailsDto> Handle(GetLeaveRequestDetailQuery request, CancellationToken cancellationToken)
         {
-            var leaveRequest = _mapper.Map<LeaveRequestDetailsDto>(await _leaveRequestRepository.GetLeaveRequestWithDetails(request.Id));
+            var leaveRequest = _mapper.Map<LeaveRequestDetailsDto>(await _leaveRequestRepository.GetByIDAsync(request.Id));
 
             if (leaveRequest == null)
                 throw new NotFoundException(nameof(LeaveRequest), request.Id);
 
             // Add Employee details as needed
-            leaveRequest.Employee = await _userService.GetEmployee(leaveRequest.RequestingEmployeeId);
+          //  leaveRequest.Employee = await _userService.GetEmployee(leaveRequest.RequestingEmployeeId);
 
             return leaveRequest;
         }

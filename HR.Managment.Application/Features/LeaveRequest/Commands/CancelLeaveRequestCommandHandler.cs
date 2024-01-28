@@ -41,7 +41,7 @@ namespace HR.Managment.Application.Features.LeaveRequest.Commands
             {
                 int daysRequested = (int)(leaveRequest.LeaveRequestEndDate - leaveRequest.LeaveRequestStartDate).TotalDays;
                 var allocation = await _leaveAllocationRepository.GetUserAllocations(leaveRequest.CreateionUserID, leaveRequest.LeaveTypesID);
-                allocation.NumberOfDays += daysRequested;
+                allocation.LeaveAllocationnumberOfDay += daysRequested;
 
                 await _leaveAllocationRepository.UpdateAsync(allocation);
             }
@@ -53,7 +53,7 @@ namespace HR.Managment.Application.Features.LeaveRequest.Commands
                 var email = new EmailMessage
                 {
                     To = string.Empty, /* Get email from employee record */
-                    Body = $"Your leave request for {leaveRequest.StartDate:D} to {leaveRequest.EndDate:D} has been cancelled successfully.",
+                    Body = $"Your leave request for {leaveRequest.LeaveRequestStartDate:D} to {leaveRequest.LeaveRequestEndDate:D} has been cancelled successfully.",
                     Subject = "Leave Request Cancelled"
                 };
 

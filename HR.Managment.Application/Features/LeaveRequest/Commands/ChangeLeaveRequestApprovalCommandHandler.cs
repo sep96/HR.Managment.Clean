@@ -49,7 +49,7 @@ namespace HR.Managment.Application.Features.LeaveRequest.Commands
             {
                 int daysRequested = (int)(leaveRequest.LeaveRequestEndDate - leaveRequest.LeaveRequestStartDate).TotalDays;
                 var allocation = await _leaveAllocationRepository.GetUserAllocations(leaveRequest.CreateionUserID, leaveRequest.LeaveTypesID);
-                allocation.NumberOfDays -= daysRequested;
+                allocation.LeaveAllocationnumberOfDay -= daysRequested;
 
                 await _leaveAllocationRepository.UpdateAsync(allocation);
             }
@@ -73,3 +73,4 @@ namespace HR.Managment.Application.Features.LeaveRequest.Commands
             return Unit.Value;
         }
     }
+}

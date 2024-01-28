@@ -1,4 +1,9 @@
-﻿using HR.Managment.Domain;
+﻿using HR.Managment.Application.Features.LeaveRequest.Queries;
+using HR.Managment.Application.Features.LeaveTypes.Commands.CreateLeaveType;
+using HR.Managment.Application.Features.LeaveTypes.Commands.DeleteLeaveType;
+using HR.Managment.Application.Features.LeaveTypes.Commands.UpdateLeaveType;
+using HR.Managment.Application.Features.LeaveTypes.Queries.GetLeaveTypeDetails;
+using HR.Managment.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,9 +23,9 @@ namespace HR.Managment.Clean.Api.Controllers
 
         // GET: api/<LeaveTypeController>
         [HttpGet]
-        public async Task<List<LeaveRequest>> Get()
+        public async Task<List<LeaveRequestListDto>> Get()
         {
-            return await _mediator.Send(new leave());
+            return  await _mediator.Send(new GetLeaveRequestListQuery());
         }
 
         // GET api/<LeaveTypeController>/5
