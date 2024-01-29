@@ -29,7 +29,7 @@ namespace HR.Managment.Application.Features.LeaveRequest.Shared
 
         private async Task<bool> LeaveTypeMustExist(int id, CancellationToken arg2)
         {
-            var leaveType = await _leaveTypeRepository.GetByIdAsync(id);
+            var leaveType = await _leaveTypeRepository.GetByIDAsync(id);
             return leaveType != null;
         }
     }
