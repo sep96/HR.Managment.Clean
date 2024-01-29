@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="Shouldly" Version="4.2.1" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,6 +21,20 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HR.Managment.Application\HR.Managment.Application.csproj" />
+    <ProjectReference Include="..\HR.Managment.Clean.Api\HR.Managment.Clean.Api.csproj" />
+    <ProjectReference Include="..\HR.Managment.Domain\HR.Managment.Domain.csproj" />
+    <ProjectReference Include="..\HR.Managment.Infrastructure\HR.Managment.Infrastructure.csproj" />
+    <ProjectReference Include="..\HR.Managment.Persistence\HR.Managment.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Feature\LeaveAllocation\" />
+    <Folder Include="Feature\LeaveRequest\" />
+    <Folder Include="Feature\LeaveType\Commands\" />
   </ItemGroup>
 
 </Project>
