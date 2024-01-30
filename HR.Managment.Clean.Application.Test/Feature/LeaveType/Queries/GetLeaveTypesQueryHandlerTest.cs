@@ -34,7 +34,5 @@ namespace HR.Managment.Clean.Application.Test.Feature.LeaveType.Queries
             result.ShouldBeOfType<List<LeaveTypesDto>>();
             result.Count.ShouldBe(4);   
        }
-
-    
     }
 }
