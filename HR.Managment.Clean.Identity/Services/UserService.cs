@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,30 +23,32 @@ namespace HR.Managment.Clean.Identity.Services
             _contextAccessor = contextAccessor;
         }
 
-        public string UserId { get => _contextAccessor.HttpContext?.User?.FindFirst("uid"); }
+        public string UserId { get => _contextAccessor.HttpContext?.User?.FindFirstValue("uid"); }
 
-        public async Task<Employee> GetEmployee(string userId)
+        public async Task<Employee> GetEmployeeByID(string userId)
         {
             var employee = await _userManager.FindByIdAsync(userId);
             return new Employee
             {
-                Email = employee.Email,
-                Id = employee.Id,
-                Firstname = employee.FirstName,
-                Lastname = employee.LastName
+                EmployeeID = employee.Id,
+                EmployeeEmail = employee.Email,
+                EmployeeFirstName = employee.FirstName,
+                EmployeeLastName = employee.LastName
             };
         }
 
-        public async Task<List<Employee>> GetEmployeeByID()
+
+        public async Task<List<Employee>> GetEmployee()
         {
             var employees = await _userManager.GetUsersInRoleAsync("Employee");
             return employees.Select(q => new Employee
             {
-                Id = q.Id,
-                Email = q.Email,
-                Firstname = q.FirstName,
-                Lastname = q.LastName
+                EmployeeID = q.Id,
+                EmployeeEmail = q.Email,
+                EmployeeFirstName = q.FirstName,
+                EmployeeLastName = q.LastName
             }).ToList();
         }
+
     }
 }

@@ -1,5 +1,6 @@
 using HR.Managment.Application;
 using HR.Managment.Clean.Api.Middleware;
+using HR.Managment.Clean.Identity;
 using HR.Managment.Infrastructure;
 using HR.Managment.Persistence;
 
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistanceServices(builder.Configuration);
 builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddIdentityService(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddCors(opt =>
 {
@@ -28,7 +30,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -10,6 +10,6 @@ namespace HR.Managment.Application.Contracts.Identity
     public interface IUserService
     {
         Task<List<Employee>> GetEmployee();
-        Task<Employee> GetEmployeeByID(int id);
+        Task<Employee> GetEmployeeByID(string id);
     }
 }
