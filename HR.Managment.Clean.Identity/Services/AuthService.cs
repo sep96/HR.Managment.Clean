@@ -83,8 +83,8 @@ namespace HR.Managment.Clean.Identity.Services
                 UserName = request.UserName,
                 EmailConfirmed = true
             };
-            var result = _userManger.CreateAsync(user, request.Password);
-            if(result.IsCompletedSuccessfully)
+            var result =await  _userManger.CreateAsync(user, request.Password);
+            if(result.Succeeded)
             {
                 await _userManger.AddToRoleAsync(user, "Employee");
                 return new RegistrationResponse { UserID = user.Id };
